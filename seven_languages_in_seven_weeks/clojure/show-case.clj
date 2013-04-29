@@ -1,51 +1,49 @@
 
 ; ----Part 1: Calling basic functions
-(+ 1 1)
-(* 3 2)
+; (println (+ 1 1))
+; (println (* 3 2))
 ; (println "Give me some Clojure!")
-(- 8 1 2)
-(< 1 2 3)
-(str "hello ," "World !")
-(= 1 1.0)
-(class true)
-; (if false (println "true") (println "false"))
+; (println (- 8 1 2))
+; (println (< 1 2 3))
+; (println (str "hello ," "World !"))
+; (println (= 1 1.0))
+; (println (class true))
+; (if true (println (+ 2 (* 2 3))) (println "false"))
 
 
 ; ----Part 2: Lists, Maps, Sets, and Vectors
 
 ; Vectors
-[:hutt :wookie :ewok]
+; (println [:hutt :wookie :ewok])
 
-(first [:hutt :wookie :ewok])
-(rest [:hutt :wookie :ewok])
+; (println (first [:hutt :wookie :ewok]))
+; (println (rest [:hutt :wookie :ewok]))
 
 ; Maps
-{:chewie :wookie :lea :human}
+; (println {:chewie "wookie" :lea "human"})
 (def mentors {:darth-vader "obi wan", :luke "yoda"})
-(mentors :luke)
-(merge-with + {:y-wing 2, :x-wing 4} {:tie-fighter 2 :x-wing 3})
+; (println (mentors :luke))
+; (println (merge-with + {:y-wing 2, :x-wing 4} {:tie-fighter 2 :x-wing 3}))
 
 ; ----Part 3: Defining Functions
-(defn force-it
-  "The first function a young Jedi needs"
-  [name]
-  (str "Use the force," name))
-; (println (force-it "liuzhuo"))
+; (defn force-it
+;  (str "Use the force," "liuzhuo"))
+; (println (force-it))
 
 ; ----Part 4: Binding and destructuring
 (def line [[0 0] [10 20]])
-(defn line-end [ln] (last line))
+; (defn line-end [ln] (last line))
 (defn line-end [[_ second]] second)
-; (println (line-end line))
+;  (println (line-end line))
 
 (def person {:name "Jabba" :profession "Gangster"})
-(let [{name :name} person] (str "The person's name is " name))
+; (println (let [{name :name} person] (str "The person's name is " name)))
 
 ; ----Part 5: Anonymous Functions
 (def people ["Lea ", "Han Solo"])
 (defn twice-count [w] (* 2 (count w)))
-(twice-count "Lando")
-(map twice-count people)
+; (println (twice-count "Lando"))
+; (println (map twice-count people))
 
 (map (fn [w] (* 2 (count w))) people)
 (map #(* 2 (count %)) people)
@@ -72,8 +70,8 @@
 (def toys ["block" "car"])
 (defn small-word? [w] (< (count w) 4))
 
-(for [x colors, y toys, :when (small-word? y)]
-  (str "I like " x " " y "s")) 
+; (println (for [x colors, y toys, :when (small-word? y)]
+;  (str "I like " x " " y "s")) )
 
 ; ----Part 8: Lazy Evaluation
 (range 1 10)
@@ -82,7 +80,7 @@
 (->> [:lather :rinse :repeat] (cycle) (drop 2) (take 5))
 
 (defn fib-pair [[a b]] [b (+ a b)])
-(take 5 (map first (iterate fib-pair [1 1])))
+; (println (take 10 (map first (iterate fib-pair [1 1]))))
 
 (defn factorial [n] (apply * (take n (iterate inc 1))))
 (factorial 5)
@@ -98,6 +96,6 @@
 ; Agents
 
 (def danger (atom "Split at your own risk."))
-; (println danger)
-; (println @danger)
+ (println danger)
+ (println @danger)
 
