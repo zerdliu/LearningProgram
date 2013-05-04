@@ -35,3 +35,10 @@
 ; END:hello
 
 (def hello-with-memory hello)
+
+(hello-with-memory "liuzhuo")
+(println @visitors)
+(hello-with-memory "wangwei")
+(println @visitors)
+
+
