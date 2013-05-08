@@ -1,0 +1,23 @@
+zabbix server安装在ai-log-mongodb00.ai01服务器上
+mysql -u zabbix -p
+帐号和密码是zabbix， 123
+zabbix_server的配置文件在/etc/zabbix/
+zabbix agentd 安装在 ai-log-mongodb02.ai01服务器上
+配置文件在/usr/local/etc/下
+
+一. 如何定位数据没有被采集过来的问题
+1. 从zabbix_agentd定位问题
+tailf /tmp/zabbix_agentd.log
+zabbix_agentd 命令
+
+2. 从数据库定位数据是否被采集过来
+use zabbix ; 
+select key_,lastvalue,prevvalue from items where key_ like "imas%" ; 
+
+show columns from items ; 
+
+3. 从zabbix_server定位问题
+tailf /tmp/zabbix_server.log
+zabbix_get 命令
+
+
