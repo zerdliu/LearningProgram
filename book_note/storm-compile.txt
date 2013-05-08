@@ -1,0 +1,19 @@
+storm编译问题解决
+libtool
+autoconf
+automake
+
+zeromq 
+jzmq（github上获取源码）
+
+./autogen.sh
+./configure
+makefile 有一行报错了，数组的赋值错了，修改
+make
+sudo env PATH=$PATH make install
+
+storm 编译失败
+LocalDRPC
+需要打一个patch，在google group上搜索
+
+最终编译成功

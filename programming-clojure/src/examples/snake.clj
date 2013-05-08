@@ -20,7 +20,7 @@
 (def height 50)
 (def point-size 10)
 (def turn-millis 75)
-(def win-length 5)
+(def win-length 9)
 (def dirs { VK_LEFT  [-1  0] 
             VK_RIGHT [ 1  0]
             VK_UP    [ 0 -1] 
